@@ -43,14 +43,14 @@ void MainWindow::activateClient()
 {
 	m_clientWidget = new ClientWidget();
 	m_window->setCentralWidget(m_clientWidget);	//setCentralWidget orphans m_mainWidget and qt automatically destroys it.
-	m_window->setFixedSize(m_window->sizeHint());
+	m_window->setFixedSize(m_clientWidget->sizeHint());
 }
 
 void MainWindow::activateServer()
 {
 	m_serverWidget = new ServerWidget();
 	m_window->setCentralWidget(m_serverWidget);
-	m_window->setFixedSize(m_window->sizeHint());
+	m_window->setFixedSize(m_serverWidget->sizeHint());
 }
 
 MainWidget::MainWidget(QMainWindow* parent) : QWidget(parent)
