@@ -37,6 +37,7 @@ bool MainWindow::init()
 	tabWidget->addTab(m_serverWidget, "Server");
 
 	m_window->setCentralWidget(tabWidget);
+	m_window->setFixedSize(m_window->sizeHint());	//makes window non-resizable by the user
 	m_window->show();
 	return true;
 }
