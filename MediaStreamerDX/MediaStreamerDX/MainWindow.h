@@ -58,10 +58,6 @@ signals:
 	void activateClientSignal();
 	void activateServerSignal();
 
-protected slots:
-	void activateClient();
-	void activateServer();
-
 private:
 	QLabel*			m_title	= nullptr;
 	QPushButton*	m_activateClientButton = nullptr;

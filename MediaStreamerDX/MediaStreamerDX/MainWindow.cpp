@@ -26,7 +26,7 @@ bool MainWindow::init()
 {
 	m_window = new QMainWindow();
 	m_menuBar = new QMenuBar();
-	m_menuBar->addMenu(tr("File"));
+	m_menuBar->addMenu(tr("File"));		//more menus/actions can be added as needed
 	m_window->setMenuBar(m_menuBar);
 
 	m_mainWidget = new MainWidget();
@@ -34,7 +34,11 @@ bool MainWindow::init()
 	connect(m_mainWidget, SIGNAL(activateServerSignal()), this, SLOT(activateServer()));
 
 	m_window->setCentralWidget(m_mainWidget);
-	m_window->setFixedSize(m_window->sizeHint());
+
+	//aw yea hard coding. Currently matches client/server widget widths
+	//for smoother transitioning, should probly make a ui file for mainWidget.
+	m_window->setFixedWidth(186);
+	m_window->setFixedHeight(100);
 	m_window->show();
 	return true;
 }
@@ -73,8 +77,10 @@ MainWidget::MainWidget(QMainWindow* parent) : QWidget(parent)
 	m_activateServerButton = new QPushButton();
 	m_activateServerButton->setText(tr("&Server"));
 
-	connect(m_activateClientButton, SIGNAL(clicked()), this, SLOT(activateClient()));
-	connect(m_activateServerButton, SIGNAL(clicked()), this, SLOT(activateServer()));
+	//qt lets us connect signals to signals which prevents having to pass member variables
+	//to the parent just for connections.
+	connect(m_activateClientButton, SIGNAL(clicked()), this, SIGNAL(activateClientSignal()));
+	connect(m_activateServerButton, SIGNAL(clicked()), this, SIGNAL(activateServerSignal()));
 
 	m_buttonLayout->addWidget(m_activateClientButton);
 	m_buttonLayout->addWidget(m_activateServerButton);
@@ -85,14 +91,4 @@ MainWidget::MainWidget(QMainWindow* parent) : QWidget(parent)
 MainWidget::~MainWidget()
 {
 
-}
-
-void MainWidget::activateClient()
-{
-	emit activateClientSignal();
-}
-
-void MainWidget::activateServer()
-{
-	emit activateServerSignal();
 }
