@@ -33,15 +33,15 @@ public slots:
 private:
 	bool            init();
 
-	QMainWindow*    m_window;
-	QMainWindow*	m_clientWindow;
-	QMainWindow*	m_serverWindow;
+	QMainWindow*    m_window = nullptr;
+	QMainWindow*	m_clientWindow = nullptr;
+	QMainWindow*	m_serverWindow = nullptr;
 
-	MainWidget*		m_mainWidget;
-	ServerWidget*	m_serverWidget;
-	ClientWidget*	m_clientWidget;
+	MainWidget*		m_mainWidget = nullptr;
+	ServerWidget*	m_serverWidget = nullptr;
+	ClientWidget*	m_clientWidget = nullptr;
 
-	QMenuBar*		m_menuBar;
+	QMenuBar*		m_menuBar = nullptr;
 };
 
 
@@ -63,10 +63,10 @@ protected slots:
 	void activateServer();
 
 private:
-	QLabel*			m_title;
-	QPushButton*	m_activateClientButton;
-	QPushButton*	m_activateServerButton;
-	QVBoxLayout*	m_mainLayout;
-	QHBoxLayout*	m_titleLayout;
-	QHBoxLayout*	m_buttonLayout;
+	QLabel*			m_title	= nullptr;
+	QPushButton*	m_activateClientButton = nullptr;
+	QPushButton*	m_activateServerButton = nullptr;
+	QVBoxLayout*	m_mainLayout = nullptr;
+	QHBoxLayout*	m_titleLayout = nullptr;
+	QHBoxLayout*	m_buttonLayout = nullptr;
 };
