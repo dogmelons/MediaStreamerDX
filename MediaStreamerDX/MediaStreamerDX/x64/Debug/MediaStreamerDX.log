@@ -1,4 +1,4 @@
-﻿Build started 7/5/2014 6:30:50 PM.
+﻿Build started 7/6/2014 1:25:08 PM.
      1>Project "c:\Users\lemongod\documents\visual studio 2013\Projects\MediaStreamerDX\MediaStreamerDX\MediaStreamerDX.vcxproj" on node 2 (Build target(s)).
      1>CustomBuild:
          Moc'ing MainWindow.h...
@@ -25,4 +25,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:03.18
+Time Elapsed 00:00:03.44

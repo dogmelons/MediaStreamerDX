@@ -173,10 +173,10 @@ public:
         stopButton->setIconSize(QSize(32, 16));
         label = new QLabel(ServerWidget);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(10, 20, 46, 13));
+        label->setGeometry(QRect(10, 20, 46, 16));
         deviceComboBox = new QComboBox(ServerWidget);
         deviceComboBox->setObjectName(QStringLiteral("deviceComboBox"));
-        deviceComboBox->setGeometry(QRect(50, 20, 121, 21));
+        deviceComboBox->setGeometry(QRect(50, 20, 121, 22));
         QPalette palette2;
         palette2.setBrush(QPalette::Active, QPalette::WindowText, brush);
         palette2.setBrush(QPalette::Active, QPalette::Button, brush1);

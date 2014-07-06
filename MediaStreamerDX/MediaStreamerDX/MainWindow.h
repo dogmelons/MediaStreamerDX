@@ -26,10 +26,6 @@ public:
 	MainWindow(int argc, char* argv[]);
 	~MainWindow();
 
-public slots:
-	void			activateServer();
-	void			activateClient();
-
 private:
 	bool            init();
 
@@ -37,32 +33,8 @@ private:
 	QMainWindow*	m_clientWindow = nullptr;
 	QMainWindow*	m_serverWindow = nullptr;
 
-	MainWidget*		m_mainWidget = nullptr;
 	ServerWidget*	m_serverWidget = nullptr;
 	ClientWidget*	m_clientWidget = nullptr;
 
 	QMenuBar*		m_menuBar = nullptr;
-};
-
-
-//widget that occupies the central widget slot of Main Window
-class MainWidget : public QWidget
-{
-	Q_OBJECT
-
-public:
-	MainWidget(QMainWindow* parent = 0);
-	~MainWidget();
-
-signals:
-	void activateClientSignal();
-	void activateServerSignal();
-
-private:
-	QLabel*			m_title	= nullptr;
-	QPushButton*	m_activateClientButton = nullptr;
-	QPushButton*	m_activateServerButton = nullptr;
-	QVBoxLayout*	m_mainLayout = nullptr;
-	QHBoxLayout*	m_titleLayout = nullptr;
-	QHBoxLayout*	m_buttonLayout = nullptr;
 };
