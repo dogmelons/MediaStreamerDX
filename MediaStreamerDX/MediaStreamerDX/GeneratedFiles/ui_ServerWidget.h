@@ -41,7 +41,7 @@ public:
         ServerWidget->setEnabled(true);
         ServerWidget->resize(186, 150);
         ServerWidget->setMinimumSize(QSize(186, 150));
-        ServerWidget->setMaximumSize(QSize(186, 150));
+        ServerWidget->setMaximumSize(QSize(186, 189));
         QPalette palette;
         QBrush brush(QColor(0, 0, 0, 255));
         brush.setStyle(Qt::SolidPattern);
