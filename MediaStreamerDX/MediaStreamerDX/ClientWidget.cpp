@@ -9,6 +9,7 @@ Date: Today
 ClientWidget::ClientWidget(QMainWindow* parent) : QWidget(parent)
 {
 	setupUi(this);
+	IPLineEdit->setInputMask("000.000.000.000;_");
 	connect(playButton, SIGNAL(clicked()), this, SLOT(toggleStreaming()));
 	connect(stopButton, SIGNAL(clicked()), this, SLOT(toggleStreaming()));
 }
