@@ -34,3 +34,18 @@ Icon
 # Files that might appear on external disk
 .Spotlight-V100
 .Trashes
+
+
+# Stupid Visual Studio Files
+
+*.opensdf
+*.sdf
+*.suo
+*.exe
+*.ilk
+*.pdb
+*.user
+*.obj
+*.log
+*.tlog
+*.lastbuildstate
