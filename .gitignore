@@ -42,6 +42,7 @@ Icon
 *.sdf
 *.suo
 *.ilk
+*.pdb
 *.user
 *.obj
 *.log
