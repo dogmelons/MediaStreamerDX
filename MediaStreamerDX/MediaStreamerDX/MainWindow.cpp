@@ -26,11 +26,15 @@ MainWindow::~MainWindow()
 bool MainWindow::init()
 {
 	m_window = new QMainWindow();
+
 	QIcon windowIcon;
 	windowIcon.addFile("resources/windowIcon.png");
 	m_window->setWindowIcon(windowIcon);
+
 	m_menuBar = new QMenuBar();
-	m_menuBar->addMenu(tr("File"));		//more menus/actions can be added as needed
+	QMenu* fileMenu = m_menuBar->addMenu(tr("File"));		//more menus/actions can be added as needed
+	QAction* closeAction = fileMenu->addAction(tr("Close"));
+	connect(closeAction, SIGNAL(triggered()), m_window, SLOT(close()));
 	m_window->setMenuBar(m_menuBar);
 
 	QTabWidget* tabWidget = new QTabWidget();
